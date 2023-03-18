@@ -42,10 +42,6 @@ class SuperheroeController extends Controller
         //
         $datosSuperHeroe = request()->except('_token');
 
-        if($request->hasFile('Foto')){
-            $datosSuperHeroe['Foto']=$request->file('Foto')->store('uploads','public');
-        }
-
         Superheroe::insert($datosSuperHeroe);
         return response()->json($datosSuperHeroe);
     }
@@ -87,12 +83,6 @@ class SuperheroeController extends Controller
         $datosSuperHeroe = request()->except(['_token', '_method']);
         Superheroe::where('id','=',$id)->update($datosSuperHeroe);
 
-        if($request->hasFile('Foto')){
-            $superheroe=Superheroe::findOrfail($id);
-            Storage::delete('public/'.$superheroe->foto);
-            $datosSuperHeroe['Foto']=$request->file('Foto')->store('uploads','public');
-        }
-
         Superheroe::where('id','=',$id)->update($datosSuperHeroe);
         $superheroe=Superheroe::findOrfail($id);
         return view('superheroe.edit', compact('superheroe'));
@@ -108,9 +98,7 @@ class SuperheroeController extends Controller
     {
         //
         $superheroe=Superheroe::findOrfail($id);
-        if(Storage::delete('public/'.$superheroe->foto)){
-            Superheroe::destroy($id);
-        }
+        Superheroe::destroy($id);
         return redirect('superheroe');
     }
 }

@@ -1,17 +1,17 @@
-<label for="Nombre">Nombre</label>
-<input type="text" name="Nombre" value="{{ isset($superheroe->nombre)?$superheroe->nombre:'' }}" id="Nombre">
+<label for="Asignatura">Asignatura</label>
+<input type="text" name="Asignatura" value="{{ isset($calificacion->asignatura)?$calificacion->asignatura:'' }}" id="Asignatura">
 <br>
-<label for="Nombre_real">Nombre Real</label>
-<input type="text" name="Nombre_real" value="{{ isset($superheroe->nombre_real)?$superheroe->nombre_real:'' }}" id="Nombre_real">
+<label for="Actividad1">Actividad 1</label>
+<input type="text" name="Actividad1" value="{{ isset($calificacion->actividad1)?$calificacion->actividad1:'' }}" id="Actividad1">
 <br>
-<label for="Info">Informacion adicional</label>
-<input type="text" name="Info" value="{{ isset($superheroe->info)?$superheroe->info:'' }}" id="Info">
+<label for="Calificacion_1">Calificacion 1</label>
+<input type="text" name="Calificacion 1" value="{{ isset($calificacion->calificacion_1)?$calificacion->calificacion_1:'' }}" id="Calificacion_1">
 <br>
-<label for="Foto">Foto</label>
-@if(isset($superheroe->foto))
-<img src="{{ asset('storage').'/'.$superheroe->foto }}" width="100" alt="">
-@endif
-<input type="file" name="Foto" value="" id="Foto">
+<label for="Actividad2">Actividad 2</label>
+<input type="text" name="Actividad2" value="{{ isset($calificacion->actividad2)?$calificacion->actividad2:'' }}" id="Actividad2">
+<br>
+<label for="Calificacion_2">Calificacion 2</label>
+<input type="text" name="Calificacion 2" value="{{ isset($calificacion->calificacion_2)?$calificacion->calificacion_2:'' }}" id="Calificacion_2">
 <br>
 <input type="submit" value="Guardar datos">
 

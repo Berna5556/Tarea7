@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSuperheroesTable extends Migration
+class CreateCalificacionesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,10 +15,11 @@ class CreateSuperheroesTable extends Migration
     {
         Schema::create('superheroes', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->string('nombre_real');
-            $table->string('info');
-            $table->string('foto');
+            $table->string('asignatura');
+            $table->string('actividad1');
+            $table->string('calificacion_1');
+            $table->string('actividad2');
+            $table->string('calificacion_2');
             $table->timestamps();
         });
     }
